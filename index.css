@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --input-font-size: 40px;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  margin: 70px auto 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  padding: 15px;
+  border: 1px solid #1a1919;
+  background-color: #fff;
+  width: 350px;
+  height: 220px;
+  z-index: 999;
+}
+
+.input {
+  display: flex;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.sideA {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.number-input {
+  height: var(--input-font-size);
+  border: 1px solid #da4444;
+}
+
+.form-card {
+  position: absolute;
+  top: 185px;
+  display: flex;
+  padding: 125px 20px 20px;
+  width: 550px;
+  height: 600px;
+  border: 1px solid #7a6f2c;
+}
+.form-card label {
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.cursor {
+  display: flex;
+  height: 100%;
+  width: 1px;
+  background-color: #1a1919;
+  animation-name: blink;
+  animation-duration: 0.9s;
+  animation-iteration-count: infinite;
+}
