@@ -3,7 +3,7 @@
 }
 
 :root {
-  --input-font-size: 40px;
+  --input-font-size: 24px;
 }
 
 body,
@@ -17,6 +17,12 @@ html {
   margin: 70px auto 0;
   flex-direction: column;
   align-items: center;
+}
+
+.main-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card {
@@ -33,6 +39,7 @@ html {
   display: flex;
   width: 100%;
   padding: 5px 10px;
+  /* overflow-y: hidden; */
 }
 
 .sideA {
@@ -46,8 +53,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 15px;
-  border: 1px solid;
+  border: 0px solid;
 }
 .moveUp {
   animation: 0.2s linear 0s alternate move_up;
@@ -57,7 +63,7 @@ html {
 }
 @keyframes move_up {
   from {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
   }
   to {
     transform: translateY(0px);
@@ -65,21 +71,26 @@ html {
 }
 @keyframes move_down {
   from {
-    transform: translateY(2px);
+    transform: translateY(3px);
   }
   to {
     transform: translateY(0px);
   }
 }
 .number-input {
-  height: var(--input-font-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid #da4444;
 }
+.number-input .char {
+  font-size: var(--input-font-size);
+}
 .number-input .char:nth-child(n + 2) {
-  margin-left: 2px;
+  margin-left: 0px;
 }
 .number-input .char:nth-child(4n + 5) {
-  margin-left: 10px;
+  margin-left: auto;
 }
 
 .form-card {
