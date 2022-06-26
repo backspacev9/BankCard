@@ -23,9 +23,12 @@
           </div>
           <div class="expires">
             <span>Expires</span>
-            <div class="input month-input" id="monthInput"></div>
-            /
-            <div class="input year-input" id="yearInput"></div>
+            <div class="date-container">
+              <div class="input month-input" id="monthInput"></div>
+              <span>/</span>
+              <div class="input year-input" id="yearInput"></div>
+            </div>
+           
           </div>
         </div>
       </div>
@@ -33,11 +36,11 @@
     <form action="" class="form-card">
       <label for="">
         Card number
-        <input type="text" id="finput-number" autocomplete="off">
+        <input type="text" id="formInput-number" autocomplete="off" maxlength="16">
       </label>
       <label for="">
         Card name
-        <input type="text" id="finput-name" autocomplete="off">
+        <input type="text" id="formInput-name" autocomplete="off" maxlength="24"  pattern="[0-9.]+">
       </label>
     </form>
   </section>
