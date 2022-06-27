@@ -40,8 +40,26 @@
       </label>
       <label for="">
         Card name
-        <input type="text" id="formInput-name" autocomplete="off" maxlength="24"  pattern="[0-9.]+">
+        <input type="text" id="formInput-name" autocomplete="off" maxlength="20">
       </label>
+      <div class="exirationAndCw">
+         <label for="" class="exirationDate">
+        Exiration Date 
+        <div> 
+          <select type="select" id="monthSelect" ></select>
+          <select type="select" id="yearSelect" ></select>
+        </div>
+        </label>
+        
+        <label for="" class="cw">
+          CW
+          <input type="text" id="cwInput" maxlength="4">
+        </label>
+      </div>
+     
+        <button>Submit</button>
+    
+      
     </form>
   </section>
 </body>
