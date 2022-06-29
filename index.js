@@ -22,7 +22,7 @@ const monthEl = [];
 const yearEl = [];
 let prevNumbers = 0;
 let prevHolders = 0;
-
+console.log(prevHolders);
 const initCharElements = () => {
   for (let i = 0; i < 16; i++) {
     numbersEl.push(new Base("div", ["char", "numberChar"], "#"));
@@ -99,6 +99,7 @@ formInputName.addEventListener("input", (ev) => {
   prevHolders = chars.length;
 });
 
+monthSelect.addEventListener("input", () => {});
 const animate = (element, animation = "") => {
   element.style.animation = `0.2s linear 0s alternate ${animation}`;
   element.addEventListener("animationend", (ev) => {

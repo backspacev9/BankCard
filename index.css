@@ -143,11 +143,20 @@ html {
   justify-content: space-between;
   margin-top: 20px;
 }
-.exirationAndCw .cw {
+.exirationAndCw .cw,
+.exirationAndCw select {
   width: 100px;
+  height: 32px;
 }
+
+.exirationAndCw select {
+  padding: 0 5px;
+}
+
 .exirationDate div {
   display: flex;
+  justify-content: space-between;
+  width: 220px;
 }
 
 .form-card button {
