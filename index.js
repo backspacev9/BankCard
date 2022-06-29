@@ -11,15 +11,19 @@ const numberInput = document.getElementById("numberInput");
 const holderInput = document.getElementById("holderInput");
 const monthSelect = document.getElementById("monthSelect");
 const yearSelect = document.getElementById("yearSelect");
+const cwInput = document.getElementById("cwInput");
+
+const card = document.getElementById("card");
 
 const formInputNumber = document.getElementById("formInput-number");
 const formInputName = document.getElementById("formInput-name");
 
 const currentYear = new Date().getFullYear();
+const EXAMPLE_HOLDER = "Example holder card".split("");
 const numbersEl = [];
-let holderEl = [];
-const monthEl = [];
-const yearEl = [];
+let holderEl = EXAMPLE_HOLDER.map((el) => new Base("div", ["char", "holderChar"], el));
+const monthEl = new Base("div", ["char", "monthChar"], "MM");
+const yearEl = new Base("div", ["char", "yearChar"], "YY");
 let prevNumbers = 0;
 let prevHolders = 0;
 console.log(prevHolders);
@@ -27,22 +31,16 @@ const initCharElements = () => {
   for (let i = 0; i < 16; i++) {
     numbersEl.push(new Base("div", ["char", "numberChar"], "#"));
   }
-  for (let i = 0; i < 2; i++) {
-    monthEl.push(new Base("div", ["char", "monthChar"], "M"));
-  }
-  for (let i = 0; i < 2; i++) {
-    yearEl.push(new Base("div", ["char", "yearChar"], "Y"));
-  }
-
   numbersEl.forEach((el) => {
     numberInput.append(el.element);
   });
-  monthEl.forEach((el) => {
-    monthInput.append(el.element);
+
+  holderEl.forEach((el) => {
+    holderInput.append(el.element);
   });
-  yearEl.forEach((el) => {
-    yearInput.append(el.element);
-  });
+
+  monthInput.append(monthEl.element);
+  yearInput.append(yearEl.element);
 
   for (i = 1; i <= 12; i++) {
     let month = i.toLocaleString("en-US", {
@@ -93,13 +91,31 @@ formInputName.addEventListener("input", (ev) => {
   holderInput.innerHTML = "";
   holderEl = chars.map((el) => new Base("div", ["char", "holderChar"], el).element);
   if (prevHolders < chars.length) animate(holderEl[cursorPos - 1], "tilt_rigth");
+  if (chars.length === 0) {
+    holderEl = EXAMPLE_HOLDER.map((el) => new Base("div", ["char", "holderChar"], el).element);
+  }
   holderEl.forEach((el) => {
     holderInput.append(el);
   });
   prevHolders = chars.length;
 });
 
-monthSelect.addEventListener("input", () => {});
+monthSelect.addEventListener("input", (ev) => {
+  animate(monthEl.element, "move_up");
+  monthEl.element.innerText = ev.target.value;
+});
+yearSelect.addEventListener("input", (ev) => {
+  animate(yearEl.element, "move_up");
+  yearEl.element.innerText = ev.target.value.slice(0, 2);
+});
+
+cwInput.addEventListener("focus", () => {
+  card.classList.toggle("flip");
+});
+cwInput.addEventListener("blur", () => {
+  card.classList.toggle("flip");
+});
+
 const animate = (element, animation = "") => {
   element.style.animation = `0.2s linear 0s alternate ${animation}`;
   element.addEventListener("animationend", (ev) => {

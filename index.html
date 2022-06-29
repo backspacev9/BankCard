@@ -10,29 +10,37 @@
 </head >
 <body>
   <section class="main">
-    <div class="card" >
-       <div class="sideA">
-        <div class="header-card">hhhh</div>
-          <div class="input number-input" id="numberInput">
-            
+    <div class="card-container">
+      <div class="card" id="card">
+        <div class="sideA">
+
+          <div class="header-card">
+            <img src="./public/images/chip.png" alt="chip" id="img-Chip">
+            <img src="./public/images/visa.png" alt="chip" id="img-cardLogo">
           </div>
-        <div class="footer-card">
-          <div class="card-holder">
-            <span>Card Holder</span>
-            <div class="input holder-input" id="holderInput"></div>
-          </div>
-          <div class="expires">
-            <span>Expires</span>
-            <div class="date-container">
-              <div class="input month-input" id="monthInput"></div>
-              <span>/</span>
-              <div class="input year-input" id="yearInput"></div>
+            <div class="input number-input" id="numberInput">
+              
             </div>
-           
+          <div class="footer-card">
+            <div class="card-holder">
+              <span>Card Holder</span>
+              <div class="input holder-input" id="holderInput"></div>
+            </div>
+            <div class="expires">
+              <span>Expires</span>
+              <div class="date-container">
+                <div class="input month-input" id="monthInput"></div>
+                <span>/</span>
+                <div class="input year-input" id="yearInput"></div>
+              </div>
+            
+            </div>
           </div>
         </div>
+        <div class="sideB"></div>
       </div>
     </div>
+   
     <form action="" class="form-card">
       <label for="">
         Card number
@@ -46,14 +54,18 @@
          <label for="" class="exirationDate">
         Exiration Date 
         <div> 
-          <select type="select" id="monthSelect" ></select>
-          <select type="select" id="yearSelect" ></select>
+          <select type="select" id="monthSelect" >
+            <option value="Month" disabled selected="true">Month</option>
+          </select>
+          <select type="select" id="yearSelect" >
+            <option value="Year" disabled selected="true">Year</option>
+          </select>
         </div>
         </label>
         
         <label for="" class="cw">
           CW
-          <input type="text" id="cwInput" maxlength="4">
+          <input type="text" id="cwInput" maxlength="4" autocomplete="off">
         </label>
       </div>
      
