@@ -97,10 +97,50 @@ button {
 .sideA {
   background-image: url("./public/images/bgCardA.jpg");
 }
+
+/* ----------------- */
 .sideB {
   background-image: url("./public/images/bgCardB.jpg");
   transform: rotateY(180deg);
 }
+.magenetLine {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 100%;
+  height: 40px;
+  background-color: #111111de;
+}
+.cw-and-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 70px;
+  gap: 30px;
+}
+.cw-and-logo label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+.cw-and-logo label input {
+  width: 100%;
+  margin-top: 5px;
+  text-align: right;
+  pointer-events: none;
+}
+
+.cw-and-logo span {
+  padding: 0 10px;
+}
+.cw-and-logo img {
+  display: flex;
+  width: 60px;
+}
+/* -------------------------- */
+
 .char {
   display: flex;
   align-items: center;
@@ -139,7 +179,7 @@ button {
   justify-content: space-between;
 }
 .footer-card span {
-  color: #ffffff94;
+  color: #ffffffba;
   margin-bottom: 5px;
 }
 

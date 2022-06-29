@@ -17,6 +17,7 @@ const card = document.getElementById("card");
 
 const formInputNumber = document.getElementById("formInput-number");
 const formInputName = document.getElementById("formInput-name");
+const FormCwInput = document.getElementById("form-cwInput");
 
 const currentYear = new Date().getFullYear();
 const EXAMPLE_HOLDER = "Example holder card".split("");
@@ -26,7 +27,7 @@ const monthEl = new Base("div", ["char", "monthChar"], "MM");
 const yearEl = new Base("div", ["char", "yearChar"], "YY");
 let prevNumbers = 0;
 let prevHolders = 0;
-console.log(prevHolders);
+let prevCW = 0;
 const initCharElements = () => {
   for (let i = 0; i < 16; i++) {
     numbersEl.push(new Base("div", ["char", "numberChar"], "#"));
@@ -109,10 +110,20 @@ yearSelect.addEventListener("input", (ev) => {
   yearEl.element.innerText = ev.target.value.slice(0, 2);
 });
 
-cwInput.addEventListener("focus", () => {
+FormCwInput.addEventListener("input", (ev) => {
+  if (/^-?\d*$/.test(ev.target.value) === false) {
+    FormCwInput.value = formInputNumber.value.slice(0, -(ev.target.value.length - prevCW));
+    return;
+  }
+
+  cwInput.value = ev.target.value.replace(/\d/g, "*");
+
+  prevCW = ev.target.value.length;
+});
+FormCwInput.addEventListener("focus", () => {
   card.classList.toggle("flip");
 });
-cwInput.addEventListener("blur", () => {
+FormCwInput.addEventListener("blur", () => {
   card.classList.toggle("flip");
 });
 
