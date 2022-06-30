@@ -11,6 +11,7 @@
 <body>
   <section class="main">
     <div class="card-container">
+      <div class="floatBorder" id="floatBorder"></div>
       <div class="card" id="card">
         <div class="sideA">
           <div class="header-card">
@@ -19,11 +20,11 @@
           </div>
             <div class="input number-input" id="numberInput"></div>
           <div class="footer-card">
-            <div class="card-holder">
+            <div class="card-holder" id="cardHolder">
               <span>Card Holder</span>
               <div class="input holder-input" id="holderInput"></div>
             </div>
-            <div class="expires">
+            <div class="expires" id="expires">
               <span>Expires</span>
               <div class="date-container">
                 <div class="input month-input" id="monthInput"></div>
@@ -71,7 +72,7 @@
         </div>
         </label>
         
-        <label for="" class="cw">
+        <label for="" class="cw" id="cw">
           CW
           <input type="text" id="form-cwInput" maxlength="4" autocomplete="off">
         </label>

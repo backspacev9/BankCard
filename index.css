@@ -35,12 +35,26 @@ button {
 }
 
 .card-container {
+  position: relative;
   display: flex;
   margin: 70px;
   width: 380px;
   height: 240px;
   perspective: 800px;
-  z-index: 999;
+  z-index: 2;
+}
+
+.floatBorder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  transition: all 0.3s linear;
+  opacity: 0;
+  z-index: 3;
 }
 .card {
   width: 100%;
@@ -88,7 +102,7 @@ button {
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding: 15px;
+  padding: 15px 15px 5px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -198,7 +212,7 @@ button {
 .expires {
   display: flex;
   flex-direction: column;
-  min-width: 70px;
+  width: 100px;
   padding: 10px;
 }
 
@@ -224,6 +238,9 @@ button {
   width: 470px;
   border-radius: 8px;
   background-color: #fff;
+}
+#formInput-number:first-letter {
+  color: red;
 }
 
 .form-card label {
