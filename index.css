@@ -1,5 +1,7 @@
 @import "animations.css";
-
+.material-symbols-outlined {
+  font-size: 14px;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -202,6 +204,7 @@ button {
   flex-direction: column;
   padding: 10px;
   width: 100%;
+  max-width: 270px;
 }
 
 .card-holder .char,

@@ -87,7 +87,13 @@ formInputNumber.addEventListener("input", (ev) => {
   // }
 
   for (let i = 0; i < numbersEl.length; i++) {
-    numbersEl[i].element.innerText = numbers[i] ? numbers[i] : "#";
+    numbersEl[i].element.innerHTML = numbers[i]
+      ? i > 3 && i < 12
+        ? `<span class="material-symbols-outlined">
+star
+</span>`
+        : numbers[i]
+      : "#";
   }
   // const regexedInput = ev.currentTarget.value.replaceAll(" ", "").replace(/.{4}/g, "$& ");
   // formInputNumber.value =
@@ -159,7 +165,7 @@ FormCwInput.addEventListener("focus", () => {
 });
 
 const animate = (element, animation = "") => {
-  element.style.animation = `0.2s linear 0s alternate ${animation}`;
+  element.style.animation = `0.1s linear 0s alternate ${animation}`;
   element.addEventListener("animationend", (ev) => {
     element.removeAttribute("style");
   });
