@@ -70,19 +70,15 @@ formInputNumber.addEventListener("input", (ev) => {
     return;
   }
   let cursorPos = ev.target.selectionStart;
-  //let fullValue = ev.currentTarget.value.split("");
   let numbers = ev.currentTarget.value.replaceAll(" ", "").split("");
 
   let k = cursorPos - 1;
-  //console.log(fullValue[cursorPos - 1]);
-  // if (fullValue[cursorPos - 1] != " ") {
+
   if (prevNumbers > numbers.length) {
     //erase
     k = numbers.length;
     animate(numbersEl[k].element, "move_up");
   } else {
-    //inputing
-    //console.log(cursorPos - 1 + "-and-" + prevNumbers);
     if (cursorPos - 1 == prevNumbers) {
       animate(numbersEl[k].element, "move_down");
     }
