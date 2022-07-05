@@ -5,29 +5,84 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Card</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="index.css">
+  
   <script src="index.js" defer></script>
 </head >
 <body>
   <section class="main">
-    <div class="card" >
-       <div class="sideA">
-        <div class="header-card">hhhh</div>
-        <div class="main-card">
-          <div class="input number-input" id="numberInput">
+    <div class="card-container">
+      <div class="floatBorder" id="floatBorder"></div>
+      <div class="card" id="card">
+        <div class="sideA">
+          <div class="header-card">
+            <img src="./public/images/chip.png" alt="chip" id="img-Chip">
+            <img src="./public/images/visa.png" alt="chip" id="img-cardLogoA">
+          </div>
+            <div class="input number-input" id="numberInput"></div>
+          <div class="footer-card">
+            <div class="card-holder" id="cardHolder">
+              <span>Card Holder</span>
+              <div class="input holder-input" id="holderInput"></div>
+            </div>
+            <div class="expires" id="expires">
+              <span>Expires</span>
+              <div class="date-container">
+                <div class="input month-input" id="monthInput"></div>
+                <span>/</span>
+                <div class="input year-input" id="yearInput"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sideB">
+          <div class="magenetLine"> </div>
+          <div class="cw-and-logo">
+            <label for="">
+              <span>CW</span>
+              <input type="text" id="cwInput">
+            </label>
+            <span>
+              <img src="./public/images/visa.png" alt="chip" id="img-cardLogoB">
+            </span>
             
           </div>
         </div>
-        <div class="footer-card">
-          mmyyy
-        </div>
       </div>
     </div>
+   
     <form action="" class="form-card">
       <label for="">
         Card number
-        <input type="text">
+        <input type="text" id="formInput-number" autocomplete="off" maxlength="16">
       </label>
+      <label for="">
+        Card name
+        <input type="text" id="formInput-name" autocomplete="off" maxlength="22">
+      </label>
+      <div class="exirationAndCw">
+         <label for="" class="exirationDate">
+        Exiration Date 
+        <div> 
+          <select type="select" id="monthSelect" >
+            <option value="Month" disabled selected="true">Month</option>
+          </select>
+          <select type="select" id="yearSelect" >
+            <option value="Year" disabled selected="true">Year</option>
+          </select>
+        </div>
+        </label>
+        
+        <label for="" class="cw" id="cw">
+          CW
+          <input type="text" id="form-cwInput" maxlength="4" autocomplete="off">
+        </label>
+      </div>
+     
+        <button>Submit</button>
+    
+      
     </form>
   </section>
 </body>
